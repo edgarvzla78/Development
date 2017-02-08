@@ -1,0 +1,20 @@
+﻿<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Comments</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: customers">
+        <tr>
+            <td data-bind="text: Id"></td>
+            <td data-bind="text: Name"></td>
+            <td data-bind="text: Age"></td>
+            <td data-bind="text: Comments"></td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<input type="button" id="btnGetCustomers" value="Get Customers" data-bind="click: getCustomers" />

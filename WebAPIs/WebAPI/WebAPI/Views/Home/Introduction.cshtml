@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Introduction";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/tutorial/intro.js"></script>
+
+<div id="intro">
+    <h2>Knockout JS Introduction</h2>
+
+    <p>First name: <strong data-bind="text: firstName"></strong></p>
+    <p>Last name: <strong data-bind="text: lastName"></strong></p>
+    <p>Full name: <strong data-bind="text: fullName"></strong></p>
+
+    <p>First name: <input data-bind="value: firstName" /></p>
+    <p>Last name: <input data-bind="value: lastName" /></p>
+
+    <button data-bind="click: capitalizeLastName">Go Caps</button>
+</div>
+
+<br />
+
+<div id="listAndCollections">
+    <h2>******* HTML - Working with Lists and Collections ********</h2>
+
+    <h2>Your seat reservations (<span data-bind="text: seats().length"></span>)</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Passenger name</th>
+                <th>Meal</th>
+                <th>Surcharge</th>
+                <th></th>
+            </tr>
+        </thead>
+        <!-- Todo: Generate table body -->
+        <tbody data-bind="foreach: seats">
+            <tr>
+                <td><input data-bind="value: name" /></td>
+                <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
+                <td data-bind="text: formattedPrice"></td>
+                <td><a href="#" data-bind="click: $root.removeSeat">Remove</a></td>
+            </tr>
+        </tbody>
+        <tfooter>
+            <button data-bind="click: $root.addSeat, enable: seats().length < 5">Reserve another seat</button>
+        </tfooter>
+    </table>
+    <h3 data-bind="visivble: totalSurcharge() > 0">
+        Total Surcharge: $<span data-bind="text: totalSurcharge().toFixed(2)"></span>
+    </h3>
+</div>
+
+<div id="customBindings">
+    <link href="~/Content/tutorial/intro.css" rel="stylesheet" />
+    <h2>************ HTML - Creating Custom Bindings *************</h2>
+
+    <h3 data-bind="text: question"></h3>
+    <p>Please distribute <b data-bind="text: pointsBudget"></b> points between the following options.</p>
+
+    <table>
+        <thead><tr><th>Option</th><th>Importance</th></tr></thead>
+        <tbody data-bind="foreach: answers">
+            <tr>
+                <td data-bind="text: answerText"></td>
+                <!-- <td><select data-bind="options: [1,2,3,4,5], value: points"></select></td> -->
+                <td data-bind="starRating: points"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4 data-bind="fadeVisible: pointsUsed() > pointsBudget">You've used too many points! Please remove some.</h4>
+    <p>You've got <b data-bind="text: pointsBudget - pointsUsed()"></b> points left to use.</p><br />
+    <button data-bind="jqButton: { enable: pointsUsed() <= pointsBudget }, click: save">Finished</button>
+    <br /><br />
+
+
+    <h3>************ Binding the Enter Key ***************</h3>
+
+    <h4>Press enter key to add a supply.</h4>
+    <input data-bind="value: newSupply, enterKey: addSupply" /><hr />
+    <button data-bind="click: addSupply">Add Supply</button> <hr />
+    <ul data-bind="foreach: supplies">
+        <li data-bind="text: $data"></li>
+    </ul>
+    <br /><br />
+    
+    <h3>************ Binding tooltips ***************</h3>
+    <p><b>placement is at right and activated by clicking inside</b></p>
+    <input data-bind="value: name, tooltip: {title: help, trigger: 'click', placement: 'right'}" /><br />
+    <p><b>overriding the trigger with hover</b></p>
+    <input data-bind="value: name, tooltip: {title: help, trigger: 'hover', placement: 'left'}" />
+    <br />
+    <p><b>by default the placement is at center and the trigger with hover</b></p>
+    <input data-bind="value: name, tooltip: {title: help, trigger: 'hover'}" />
+    <br /><br /><br /><br />
+</div>
+
+
+
+<div id="extendObservables">
+    <h2>************ HTML - Extending Observables *************</h2>
+
+    <input data-bind="value: userName, valueUpdate: 'afterkeydown'" />
+    <br />
+    <p class="error" data-bind="visible: userName.hasError, text: userName.message"></p>
+</div>
+
+<div id="extendObservables2">
+    <h2>************ HTML - Extending Observables - Mapping Array data *************</h2>
+
+    <ul data-bind="foreach: clients">
+        <li data-bind="text: userName"></li>
+    </ul>
+
+    <ul data-bind="foreach: products">
+        <li>
+            <input data-bind="value: productCode, hasfocus: productCode.focused" />
+            <hr />
+        </li>
+    </ul>
+    <button data-bind="click: addProduct">Add Product</button>
+
+</div>

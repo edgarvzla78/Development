@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model CustomersWeb.ViewModels.CustomerViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    @using (Html.BeginForm("Create", "Customers", FormMethod.Post))
+    {
+        <table cellspacing="2" cellpadding="2">
+            <tr>
+                <td>@Html.LabelFor(model => model.Customer.Name)</td>
+                <td>@Html.TextBoxFor(model => model.Customer.Name)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Customer.Age)</td>
+                <td>@Html.TextBoxFor(model => model.Customer.Age)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Customer.Comments)</td>
+                <td>@Html.TextBoxFor(model => model.Customer.Comments)</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="Save" /></td>
+            </tr>
+</table>
+    }
+</body>
+</html>

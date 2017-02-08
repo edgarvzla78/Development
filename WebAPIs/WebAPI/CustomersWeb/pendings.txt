@@ -1,0 +1,3 @@
+﻿*************************************************
+*************************************************
+1. The GetAllCustomers action from the Customer Controller is not transfering data correctly to the GetJSON call from the knockout

@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/tutorial/CustomerViewModel.js"></script>
+
+<h2>Customers</h2>
+@*<input id="APIPostCustomerUrl" type="hidden" value="@Url.Action("eee", "api/Customers")" />
+<input id="APIGetAllCustomersUrl" type="hidden" value="/api/Customers/" />*@
+
+<div id="displayNode">@Html.Partial("CustomerList")</div>
+<br />
+<div id="createNode">@Html.Partial("CreateCustomer")</div>
+
