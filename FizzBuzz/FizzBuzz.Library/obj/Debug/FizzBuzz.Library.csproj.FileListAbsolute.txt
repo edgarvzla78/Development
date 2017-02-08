@@ -1,0 +1,5 @@
+C:\Users\ArteDigital\Documents\DEVELOPMENT\FizzBuzz\FizzBuzz.Library\bin\Debug\FizzBuzz.Library.dll
+C:\Users\ArteDigital\Documents\DEVELOPMENT\FizzBuzz\FizzBuzz.Library\bin\Debug\FizzBuzz.Library.pdb
+C:\Users\ArteDigital\Documents\DEVELOPMENT\FizzBuzz\FizzBuzz.Library\obj\Debug\FizzBuzz.Library.csprojResolveAssemblyReference.cache
+C:\Users\ArteDigital\Documents\DEVELOPMENT\FizzBuzz\FizzBuzz.Library\obj\Debug\FizzBuzz.Library.dll
+C:\Users\ArteDigital\Documents\DEVELOPMENT\FizzBuzz\FizzBuzz.Library\obj\Debug\FizzBuzz.Library.pdb
